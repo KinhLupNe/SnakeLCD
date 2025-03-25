@@ -1,50 +1,43 @@
-Game Rắn Săn Mồi trên LCD 16x2
-Giới thiệu
-Đây là một trò chơi rắn săn mồi được thiết kế để chạy trên màn hình LCD 16x2 kết hợp với vi điều khiển Arduino Uno R3. Trò chơi được điều khiển bằng joystick, mang đến trải nghiệm đơn giản nhưng thú vị trên phần cứng giới hạn.
+# Game Rắn Săn Mồi trên LCD 16x2
 
-Tính năng chính
-Hiển thị trên màn hình LCD 16x2: Sử dụng LCD để hiển thị trò chơi.
+## Giới thiệu
+Đây là một trò chơi **rắn săn mồi** được thiết kế để chạy trên **màn hình LCD 16x2** kết hợp với **vi điều khiển Arduino Uno R3**. Trò chơi được điều khiển bằng **joystick**, mang đến trải nghiệm đơn giản nhưng thú vị trên phần cứng giới hạn.
 
-Điều khiển bằng Joystick: Dễ dàng điều khiển hướng di chuyển của rắn.
+## Tính năng chính
+- **Điều khiển bằng Joystick:** Dễ dàng điều khiển hướng di chuyển của rắn.
+- **Vi điều khiển Arduino Uno R3:** Phần cứng phổ biến, dễ tiếp cận.
+- **Màn hình LCD 16x2:** Hiển thị tình trạng của rắn, điểm số, v.v.
 
-Thực hiện trên Arduino Uno R3: Tích hợp với phần cứng phổ biến và dễ tiếp cận.
+## Lưu ý về bộ nhớ
+- **Giới hạn sRAM (2KB):** Khi rắn ngày càng dài, việc cập nhật vị trí có thể gây giật lag do giới hạn bộ nhớ.
+- **Giới hạn CGRAM (8 ký tự custom):** Nếu màn hình bị chiếm 9 ô ký tự trở lên, bạn có thể gặp lỗi hiển thị vì CGRAM chỉ chứa được tối đa 8 ký tự tùy chỉnh.
 
-Quản lý bộ nhớ hạn chế: Lưu ý khi sử dụng sRAM 2KB của vi điều khiển:
+## Phần cứng và linh kiện
+- **Arduino Uno R3**
+- **Joystick**
+- **Màn hình LCD 16x2**
+- Dây nối và các linh kiện phụ trợ (tùy thuộc vào cách bạn thiết kế mạch)
 
-Khi rắn tăng quá dài có thể gây giật lag do giới hạn bộ nhớ.
+## Hướng dẫn cài đặt
+1. **Kết nối phần cứng:**
+   - Kết nối màn hình LCD 16x2 với Arduino Uno theo sơ đồ (chân VSS, VDD, V0, RS, RW, E, D4-D7, v.v.).
+   - Gắn Joystick vào các chân phù hợp (chân A0, A1) để đọc tín hiệu X/Y.
+2. **Nạp code vào Arduino:**
+   - Mở Arduino IDE (hoặc công cụ bạn ưa thích).
+   - Tải file code của dự án.
+   - Chọn Board là **Arduino Uno**.
+   - Chọn cổng COM tương ứng với Arduino.
+   - Nhấn **Upload** để nạp chương trình.
+3. **Chạy trò chơi:**
+   - Sau khi nạp code thành công, màn hình LCD sẽ hiển thị giao diện game.
+   - Dùng Joystick để điều khiển rắn di chuyển.
 
-Khi màn hình bị chiếm 9 ô ký tự trở lên, có thể gặp lỗi do CGRAM chỉ chứa tối đa 8 ký tự custom.
+## Cách chơi
+- **Mục tiêu:** Điều khiển rắn ăn mồi để tăng độ dài và ghi điểm.
+- **Di chuyển:** Sử dụng Joystick để điều khiển rắn lên/xuống/trái/phải.
+- **Kết thúc:** Trò chơi kết thúc khi rắn va vào chính nó hoặc ra khỏi vùng màn hình.
 
-Hướng dẫn cài đặt và chạy
-Phần cứng cần chuẩn bị:
+## Lời kết
+Bạn có thể tuỳ chỉnh code, cải tiến thuật toán hoặc bổ sung tính năng để trò chơi chạy mượt hơn trong giới hạn phần cứng. Nếu có bất kỳ thắc mắc hoặc góp ý, hãy liên hệ hoặc tạo issue trên repository của dự án.
 
-Arduino Uno R3.
-
-Màn hình LCD 16x2.
-
-Joystick.
-
-Dây nối và các linh kiện phụ trợ.
-
-Kết nối phần cứng:
-
-Kết nối màn hình LCD với Arduino theo sơ đồ mạch đi kèm.
-
-Gắn joystick vào các chân phù hợp trên Arduino.
-
-Cài đặt phần mềm:
-
-Tải và cài đặt Arduino IDE.
-
-Mở file code nguồn và nạp chương trình vào Arduino thông qua Arduino IDE.
-
-Chạy trò chơi:
-
-Sau khi nạp code, trò chơi sẽ tự động chạy.
-
-Sử dụng joystick để điều khiển rắn và thưởng thức trò chơi.
-
-Lưu ý
-Giới hạn bộ nhớ: Khi rắn tăng quá dài, có thể xảy ra giật lag do sRAM chỉ có 2KB.
-
-Giới hạn CGRAM: Nếu màn hình bị chiếm tới 9 ô ký tự trở lên, sẽ gặp lỗi hiển thị do CGRAM chỉ chứa được tối đa 8 ký tự custom.
+Chúc bạn thành công và có những trải nghiệm thú vị khi phát triển trò chơi rắn săn mồi trên Arduino!
